@@ -1,0 +1,17 @@
+Lambda_0,Lambda_1
+Ethane,Methane
+Methane,Ethane
+Methanol,Methane
+Methane,Methanol
+Ethane,Methanol
+Methanol,Ethane
+Toluene,Methane
+Methane,Toluene
+Neopentane,Methane
+Methane,Neopentane
+2-Methylfuran,Methane
+Methane,2-Methylfuran
+2-Methylindole,Methane
+Methane,2-Methylindole
+2-cyclopentanylindole,7-cyclopentanylindole
+7-cyclopentanylindole,2-cyclopentanylindole
