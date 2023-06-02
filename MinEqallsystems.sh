@@ -21,4 +21,4 @@ for filename in ./Systems/*; do
 	cd ../../
 done
 #Generates an extremely simple report that records success or failure of each simulation
-python MinEq_report.py 
+python MinEq_report.py

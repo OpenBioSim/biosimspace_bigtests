@@ -19,9 +19,9 @@ reps=( rep0 rep1 rep2 )
 rep=${reps[SLURM_ARRAY_TASK_ID]}
 cd $rep
 echo "$PWD"
-python ~/bigtests_inprogresss/MinEq_solv.py > solv_mineq.o
+python ~/biosimspace_bigtests/MinEq_solv.py > solv_mineq.o
 echo "Solvated System Complete"
-python ~/bigtests_inprogresss/MinEq_vac.py > vac_mineq.o
+python ~/biosimspace_bigtests/MinEq_vac.py > vac_mineq.o
 echo "Vacuum System Complete"
 wait
 cd ..

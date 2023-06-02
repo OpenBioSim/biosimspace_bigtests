@@ -14,7 +14,7 @@
 source /home/matthew/mambaforge/bin/activate openbiosim
 python3 --version
 ./convtoSMILES.sh
-python ~/bigtests_inprogresss/generate_systems.py 
+python generate_systems.py 
 wait
 cd ..
 
