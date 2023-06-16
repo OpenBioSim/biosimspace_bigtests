@@ -25,12 +25,12 @@ for filename in ./Systems/*; do
 		cd $rep/solv
 		echo "$PWD"
 		cd lambda_0.0000
-		python ~/mambaforge/envs/openbiosim/share/Sire/scripts/lj-tailcorrection.py -t somd.prm7 -c somd.rst7 -m somd.pert -C somd.cfg -l 0.00 -r traj000000001.dcd -s 1 1> ../freenrg-LJCOR-lam-0.000.dat 2> /dev/null
+		lj-tailcorrection -t somd.prm7 -c somd.rst7 -m somd.pert -C somd.cfg -l 0.00 -r traj000000001.dcd -s 1 1> ../freenrg-LJCOR-lam-0.000.dat 2> /dev/null
 		wait
 		cd ..
 		cd lambda_1.0000
 		echo "$(pwd)"
-		python ~/mambaforge/envs/openbiosim/share/Sire/scripts/lj-tailcorrection.py -t somd.prm7 -c somd.rst7 -m somd.pert -C somd.cfg -l 1.00 -r traj000000001.dcd -s 1 1> ../freenrg-LJCOR-lam-1.000.dat 2> /dev/null
+		lj-tailcorrection -t somd.prm7 -c somd.rst7 -m somd.pert -C somd.cfg -l 1.00 -r traj000000001.dcd -s 1 1> ../freenrg-LJCOR-lam-1.000.dat 2> /dev/null
 		cd ..
 		wait
 		cd $systemfolder
