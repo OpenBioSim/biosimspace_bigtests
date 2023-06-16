@@ -11,7 +11,8 @@
 #SBATCH --output=./scriptouts/runall.o
 #SBATCH --error=./scriptouts/runall.err
 
-source /home/matthew/mambaforge/bin/activate openbiosim
+eval "$(conda shell.bash hook)"
+conda activate openbiosim
 python3 --version
 cd ../
 maindir="$PWD"

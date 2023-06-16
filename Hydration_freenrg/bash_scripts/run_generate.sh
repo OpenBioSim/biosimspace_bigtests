@@ -11,6 +11,7 @@
 #SBATCH --output=./scriptouts/systemgenerate.o
 #SBATCH --error=./scriptouts/systemgenerate.err
 
+eval "$(conda shell.bash hook)"
 conda activate openbiosim
 python3 --version
 ./convtoSMILES.sh

@@ -11,7 +11,8 @@
 #SBATCH --output=./scriptouts/MinEq.o
 #SBATCH --error=./scriptouts/MinEq.err
 
-source /home/matthew/mambaforge/bin/activate openbiosim
+eval "$(conda shell.bash hook)"
+conda activate openbiosim
 python --version
 cd ../
 sdir="$PWD"

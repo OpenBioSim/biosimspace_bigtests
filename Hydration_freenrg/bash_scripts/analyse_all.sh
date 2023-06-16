@@ -11,7 +11,8 @@
 #SBATCH --output=./scriptouts/analysis.o
 #SBATCH --error=./scriptouts/analysis.err
 
-source /home/matthew/mambaforge/bin/activate openbiosim
+eval "$(conda shell.bash hook)"
+conda activate openbiosim
 python3 --version
 cd ../
 maindir="$PWD"
