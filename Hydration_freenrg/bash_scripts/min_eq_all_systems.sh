@@ -16,6 +16,8 @@ conda activate openbiosim
 python --version
 cd ../
 sdir="$PWD"
+#Write a yaml file containing environment information in to the environments folder
+conda env export > $sdir/environments/$(date +"%Y-%d-%m").yml
 for filename in ./Systems/*; do
 	cd $filename
 	echo "$PWD"
