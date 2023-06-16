@@ -22,8 +22,8 @@ for filename in ./Systems/*; do
 	for rep in ./rep*; do
 		cd $rep
 		echo "rep directory = $PWD"
-		sbatch --wait --array=0-16 $maindir/bash_scripts/runonesystem_solv.sh
-		sbatch --wait --array=0-16 $maindir/bash_scripts/runonesystem_vac.sh
+		sbatch --wait --array=0-16 $maindir/bash_scripts/run_one_system_solv.sh
+		sbatch --wait --array=0-16 $maindir/bash_scripts/run_one_system_vac.sh
 		cd ..
 	done
 	cd $maindir

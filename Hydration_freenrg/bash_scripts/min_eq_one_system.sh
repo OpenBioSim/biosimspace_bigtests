@@ -20,9 +20,9 @@ reps=( rep0 rep1 rep2 )
 rep=${reps[SLURM_ARRAY_TASK_ID]}
 cd $rep
 echo "$PWD"
-python ../../../python/MinEq_solv.py > solv_mineq_$rep.o
+python ../../../python/min_eq_solv.py > solv_mineq_$rep.o
 echo "Solvated System Complete"
-python ../../../python/MinEq_vac.py > vac_mineq_$rep.o
+python ../../../python/min_eq_vac.py > vac_mineq_$rep.o
 echo "Vacuum System Complete"
 wait
 cd ..

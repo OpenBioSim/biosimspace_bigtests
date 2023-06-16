@@ -16,12 +16,9 @@ conda activate openbiosim
 python --version
 cd ../
 sdir="$PWD"
-reps=( rep1 rep2 rep3 )
 for filename in ./Systems/*; do
 	cd $filename
 	echo "$PWD"
-	sbatch --array=0-2 $sdir/bash_scripts/MinEqonesystem.sh
+	sbatch --array=0-2 $sdir/bash_scripts/min_eq_one_system.sh
 	cd ../../
 done
-#Generates an extremely simple report that records success or failure of each simulation
-#python ./python/MinEq_report.py now defunct
