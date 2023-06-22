@@ -1,0 +1,45 @@
+Parameterising 2-cyclopentanylindole with SMILES string C1CCC(C1)c1cc2c([nH]1)cccc2
+Parameterising 2-methylfuran with SMILES string Cc1ccco1
+Parameterising 2-methylindole with SMILES string Cc1cc2c([nH]1)cccc2
+Parameterising 7-cyclopentanylindole with SMILES string C1CCC(C1)c1cccc2c1[nH]cc2
+Parameterising ethane with SMILES string CC
+Parameterising ethanol with SMILES string CCO
+Parameterising methane with SMILES string C
+Parameterising methanol with SMILES string CO
+Parameterising neopentane with SMILES string CC(C)(C)C
+Parameterising neopentane2 with SMILES string CC(C)(C)C
+Parameterising toluene with SMILES string Cc1ccccc1
+Attempting to create perturbable system for Ethane <--> Methane
+Perturbable System created
+Attempting to create perturbable system for Methane <--> Ethane
+Perturbable System created
+Attempting to create perturbable system for Methanol <--> Methane
+Perturbable System created
+Attempting to create perturbable system for Methane <--> Methanol
+Perturbable System created
+Attempting to create perturbable system for Ethane <--> Methanol
+Perturbable System created
+Attempting to create perturbable system for Methanol <--> Ethane
+Perturbable System created
+Attempting to create perturbable system for Toluene <--> Methane
+Perturbable System created
+Attempting to create perturbable system for Methane <--> Toluene
+Perturbable System created
+Attempting to create perturbable system for Neopentane <--> Methane
+Perturbable System created
+Attempting to create perturbable system for Methane <--> Neopentane
+Perturbable System created
+Attempting to create perturbable system for 2-Methylfuran <--> Methane
+Perturbable System created
+Attempting to create perturbable system for Methane <--> 2-Methylfuran
+Perturbable System created
+Attempting to create perturbable system for 2-Methylindole <--> Methane
+Perturbable System created
+Attempting to create perturbable system for Methane <--> 2-Methylindole
+Perturbable System created
+Attempting to create perturbable system for 2-cyclopentanylindole <--> 7-cyclopentanylindole
+Initial merge failed, trying again with ring size change
+Perturbable System created
+Attempting to create perturbable system for 7-cyclopentanylindole <--> 2-cyclopentanylindole
+Initial merge failed, trying again with ring size change
+Perturbable System created

@@ -1,0 +1,12 @@
+SMILES file_origin mol
+C1CCC(C1)c1cc2c([nH]1)cccc2	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/2-cyclopentanylindole/
+Cc1ccco1	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/2-methylfuran/
+Cc1cc2c([nH]1)cccc2	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/2-methylindole/
+C1CCC(C1)c1cccc2c1[nH]cc2	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/7-cyclopentanylindole/
+CC	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/ethane/
+CCO	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/ethanol/
+C	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/methane/
+CO	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/methanol/
+CC(C)(C)C	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/neopentane/
+CC(C)(C)C	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/neopentane2/
+Cc1ccccc1	solute.pdb /home/matthew/biosimspace_bigtests/Hydration_freenrg/ligands/toluene/

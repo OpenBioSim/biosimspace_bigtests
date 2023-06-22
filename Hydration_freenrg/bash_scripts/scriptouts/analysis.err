@@ -1,0 +1,394 @@
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 35: cd: /home/matthew/biosimspace_bigtests/Hydration_freenrg/Systems/2-cyclopentanylindole_7-cyclopentanylindole: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 24: cd: ./rep1/solv: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 26: cd: lambda_0.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 27: ../freenrg-LJCOR-lam-0.000.dat: No such file or directory
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 30: cd: lambda_1.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 32: ../freenrg-LJCOR-lam-1.000.dat: No such file or directory
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 35: cd: /home/matthew/biosimspace_bigtests/Hydration_freenrg/Systems/2-cyclopentanylindole_7-cyclopentanylindole: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 24: cd: ./rep2/solv: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 26: cd: lambda_0.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 30: cd: lambda_1.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 35: cd: /home/matthew/biosimspace_bigtests/Hydration_freenrg/Systems/2-cyclopentanylindole_7-cyclopentanylindole: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 38: cd: /home/matthew/biosimspace_bigtests/Hydration_freenrg./Systems/2-cyclopentanylindole_7-cyclopentanylindole: No such file or directory
+INFO:numexpr.utils:Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+WARNING:root:Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
+/home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:66: RuntimeWarning: Mean of empty slice
+  avg = np.nanmean([f for f in free_ens])
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:88   │
+│ in <module>                                                                  │
+│                                                                              │
+│   85 energies_dict["successful_reps"] = [s_r]                                │
+│   86 energies_dict["date"] = [date.today()]                                  │
+│   87 df=pd.DataFrame.from_dict(energies_dict)                                │
+│ ❱ 88 df.to_csv(results_file,mode='a',header=False)                           │
+│   89                                                                         │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /core/generic.py:3772 in to_csv                                              │
+│                                                                              │
+│    3769 │   │   │   decimal=decimal,                                         │
+│    3770 │   │   )                                                            │
+│    3771 │   │                                                                │
+│ ❱  3772 │   │   return DataFrameRenderer(formatter).to_csv(                  │
+│    3773 │   │   │   path_or_buf,                                             │
+│    3774 │   │   │   lineterminator=lineterminator,                           │
+│    3775 │   │   │   sep=sep,                                                 │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/format.py:1186 in to_csv                                         │
+│                                                                              │
+│   1183 │   │   │   storage_options=storage_options,                          │
+│   1184 │   │   │   formatter=self.fmt,                                       │
+│   1185 │   │   )                                                             │
+│ ❱ 1186 │   │   csv_formatter.save()                                          │
+│   1187 │   │                                                                 │
+│   1188 │   │   if created_buffer:                                            │
+│   1189 │   │   │   assert isinstance(path_or_buf, StringIO)                  │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/csvs.py:240 in save                                              │
+│                                                                              │
+│   237 │   │   Create the writer & save.                                      │
+│   238 │   │   """                                                            │
+│   239 │   │   # apply compression and byte/text conversion                   │
+│ ❱ 240 │   │   with get_handle(                                               │
+│   241 │   │   │   self.filepath_or_buffer,                                   │
+│   242 │   │   │   self.mode,                                                 │
+│   243 │   │   │   encoding=self.encoding,                                    │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:737 in get_handle                                              │
+│                                                                              │
+│    734 │                                                                     │
+│    735 │   # Only for write methods                                          │
+│    736 │   if "r" not in mode and is_path:                                   │
+│ ❱  737 │   │   check_parent_directory(str(handle))                           │
+│    738 │                                                                     │
+│    739 │   if compression:                                                   │
+│    740 │   │   if compression != "zstd":                                     │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:600 in check_parent_directory                                  │
+│                                                                              │
+│    597 │   """                                                               │
+│    598 │   parent = Path(path).parent                                        │
+│    599 │   if not parent.is_dir():                                           │
+│ ❱  600 │   │   raise OSError(rf"Cannot save file into a non-existent directo │
+│    601                                                                       │
+│    602                                                                       │
+│    603 @overload                                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OSError: Cannot save file into a non-existent directory: '../../energy_results'
+/var/spool/slurmd/job10686/slurm_script: line 20: cd: ./Systems/2-Methylfuran_Methane: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 24: cd: ./rep*/solv: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 26: cd: lambda_0.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 30: cd: lambda_1.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 38: cd: /home/matthew/biosimspace_bigtests/Hydration_freenrg./Systems/2-Methylfuran_Methane: No such file or directory
+INFO:numexpr.utils:Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+WARNING:root:Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
+/home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:66: RuntimeWarning: Mean of empty slice
+  avg = np.nanmean([f for f in free_ens])
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:88   │
+│ in <module>                                                                  │
+│                                                                              │
+│   85 energies_dict["successful_reps"] = [s_r]                                │
+│   86 energies_dict["date"] = [date.today()]                                  │
+│   87 df=pd.DataFrame.from_dict(energies_dict)                                │
+│ ❱ 88 df.to_csv(results_file,mode='a',header=False)                           │
+│   89                                                                         │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /core/generic.py:3772 in to_csv                                              │
+│                                                                              │
+│    3769 │   │   │   decimal=decimal,                                         │
+│    3770 │   │   )                                                            │
+│    3771 │   │                                                                │
+│ ❱  3772 │   │   return DataFrameRenderer(formatter).to_csv(                  │
+│    3773 │   │   │   path_or_buf,                                             │
+│    3774 │   │   │   lineterminator=lineterminator,                           │
+│    3775 │   │   │   sep=sep,                                                 │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/format.py:1186 in to_csv                                         │
+│                                                                              │
+│   1183 │   │   │   storage_options=storage_options,                          │
+│   1184 │   │   │   formatter=self.fmt,                                       │
+│   1185 │   │   )                                                             │
+│ ❱ 1186 │   │   csv_formatter.save()                                          │
+│   1187 │   │                                                                 │
+│   1188 │   │   if created_buffer:                                            │
+│   1189 │   │   │   assert isinstance(path_or_buf, StringIO)                  │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/csvs.py:240 in save                                              │
+│                                                                              │
+│   237 │   │   Create the writer & save.                                      │
+│   238 │   │   """                                                            │
+│   239 │   │   # apply compression and byte/text conversion                   │
+│ ❱ 240 │   │   with get_handle(                                               │
+│   241 │   │   │   self.filepath_or_buffer,                                   │
+│   242 │   │   │   self.mode,                                                 │
+│   243 │   │   │   encoding=self.encoding,                                    │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:737 in get_handle                                              │
+│                                                                              │
+│    734 │                                                                     │
+│    735 │   # Only for write methods                                          │
+│    736 │   if "r" not in mode and is_path:                                   │
+│ ❱  737 │   │   check_parent_directory(str(handle))                           │
+│    738 │                                                                     │
+│    739 │   if compression:                                                   │
+│    740 │   │   if compression != "zstd":                                     │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:600 in check_parent_directory                                  │
+│                                                                              │
+│    597 │   """                                                               │
+│    598 │   parent = Path(path).parent                                        │
+│    599 │   if not parent.is_dir():                                           │
+│ ❱  600 │   │   raise OSError(rf"Cannot save file into a non-existent directo │
+│    601                                                                       │
+│    602                                                                       │
+│    603 @overload                                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OSError: Cannot save file into a non-existent directory: '../../energy_results'
+/var/spool/slurmd/job10686/slurm_script: line 20: cd: ./Systems/2-Methylindole_Methane: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 24: cd: ./rep*/solv: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 26: cd: lambda_0.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 30: cd: lambda_1.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 38: cd: /home/matthew/biosimspace_bigtests/Hydration_freenrg./Systems/2-Methylindole_Methane: No such file or directory
+INFO:numexpr.utils:Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+WARNING:root:Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
+/home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:66: RuntimeWarning: Mean of empty slice
+  avg = np.nanmean([f for f in free_ens])
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:88   │
+│ in <module>                                                                  │
+│                                                                              │
+│   85 energies_dict["successful_reps"] = [s_r]                                │
+│   86 energies_dict["date"] = [date.today()]                                  │
+│   87 df=pd.DataFrame.from_dict(energies_dict)                                │
+│ ❱ 88 df.to_csv(results_file,mode='a',header=False)                           │
+│   89                                                                         │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /core/generic.py:3772 in to_csv                                              │
+│                                                                              │
+│    3769 │   │   │   decimal=decimal,                                         │
+│    3770 │   │   )                                                            │
+│    3771 │   │                                                                │
+│ ❱  3772 │   │   return DataFrameRenderer(formatter).to_csv(                  │
+│    3773 │   │   │   path_or_buf,                                             │
+│    3774 │   │   │   lineterminator=lineterminator,                           │
+│    3775 │   │   │   sep=sep,                                                 │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/format.py:1186 in to_csv                                         │
+│                                                                              │
+│   1183 │   │   │   storage_options=storage_options,                          │
+│   1184 │   │   │   formatter=self.fmt,                                       │
+│   1185 │   │   )                                                             │
+│ ❱ 1186 │   │   csv_formatter.save()                                          │
+│   1187 │   │                                                                 │
+│   1188 │   │   if created_buffer:                                            │
+│   1189 │   │   │   assert isinstance(path_or_buf, StringIO)                  │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/csvs.py:240 in save                                              │
+│                                                                              │
+│   237 │   │   Create the writer & save.                                      │
+│   238 │   │   """                                                            │
+│   239 │   │   # apply compression and byte/text conversion                   │
+│ ❱ 240 │   │   with get_handle(                                               │
+│   241 │   │   │   self.filepath_or_buffer,                                   │
+│   242 │   │   │   self.mode,                                                 │
+│   243 │   │   │   encoding=self.encoding,                                    │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:737 in get_handle                                              │
+│                                                                              │
+│    734 │                                                                     │
+│    735 │   # Only for write methods                                          │
+│    736 │   if "r" not in mode and is_path:                                   │
+│ ❱  737 │   │   check_parent_directory(str(handle))                           │
+│    738 │                                                                     │
+│    739 │   if compression:                                                   │
+│    740 │   │   if compression != "zstd":                                     │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:600 in check_parent_directory                                  │
+│                                                                              │
+│    597 │   """                                                               │
+│    598 │   parent = Path(path).parent                                        │
+│    599 │   if not parent.is_dir():                                           │
+│ ❱  600 │   │   raise OSError(rf"Cannot save file into a non-existent directo │
+│    601                                                                       │
+│    602                                                                       │
+│    603 @overload                                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OSError: Cannot save file into a non-existent directory: '../../energy_results'
+/var/spool/slurmd/job10686/slurm_script: line 20: cd: ./Systems/7-cyclopentanylindole_2-cyclopentanylindole: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 24: cd: ./rep*/solv: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 26: cd: lambda_0.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 30: cd: lambda_1.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 38: cd: /home/matthew/biosimspace_bigtests/Hydration_freenrg./Systems/7-cyclopentanylindole_2-cyclopentanylindole: No such file or directory
+INFO:numexpr.utils:Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+WARNING:root:Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
+/home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:66: RuntimeWarning: Mean of empty slice
+  avg = np.nanmean([f for f in free_ens])
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:88   │
+│ in <module>                                                                  │
+│                                                                              │
+│   85 energies_dict["successful_reps"] = [s_r]                                │
+│   86 energies_dict["date"] = [date.today()]                                  │
+│   87 df=pd.DataFrame.from_dict(energies_dict)                                │
+│ ❱ 88 df.to_csv(results_file,mode='a',header=False)                           │
+│   89                                                                         │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /core/generic.py:3772 in to_csv                                              │
+│                                                                              │
+│    3769 │   │   │   decimal=decimal,                                         │
+│    3770 │   │   )                                                            │
+│    3771 │   │                                                                │
+│ ❱  3772 │   │   return DataFrameRenderer(formatter).to_csv(                  │
+│    3773 │   │   │   path_or_buf,                                             │
+│    3774 │   │   │   lineterminator=lineterminator,                           │
+│    3775 │   │   │   sep=sep,                                                 │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/format.py:1186 in to_csv                                         │
+│                                                                              │
+│   1183 │   │   │   storage_options=storage_options,                          │
+│   1184 │   │   │   formatter=self.fmt,                                       │
+│   1185 │   │   )                                                             │
+│ ❱ 1186 │   │   csv_formatter.save()                                          │
+│   1187 │   │                                                                 │
+│   1188 │   │   if created_buffer:                                            │
+│   1189 │   │   │   assert isinstance(path_or_buf, StringIO)                  │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/csvs.py:240 in save                                              │
+│                                                                              │
+│   237 │   │   Create the writer & save.                                      │
+│   238 │   │   """                                                            │
+│   239 │   │   # apply compression and byte/text conversion                   │
+│ ❱ 240 │   │   with get_handle(                                               │
+│   241 │   │   │   self.filepath_or_buffer,                                   │
+│   242 │   │   │   self.mode,                                                 │
+│   243 │   │   │   encoding=self.encoding,                                    │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:737 in get_handle                                              │
+│                                                                              │
+│    734 │                                                                     │
+│    735 │   # Only for write methods                                          │
+│    736 │   if "r" not in mode and is_path:                                   │
+│ ❱  737 │   │   check_parent_directory(str(handle))                           │
+│    738 │                                                                     │
+│    739 │   if compression:                                                   │
+│    740 │   │   if compression != "zstd":                                     │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:600 in check_parent_directory                                  │
+│                                                                              │
+│    597 │   """                                                               │
+│    598 │   parent = Path(path).parent                                        │
+│    599 │   if not parent.is_dir():                                           │
+│ ❱  600 │   │   raise OSError(rf"Cannot save file into a non-existent directo │
+│    601                                                                       │
+│    602                                                                       │
+│    603 @overload                                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OSError: Cannot save file into a non-existent directory: '../../energy_results'
+/var/spool/slurmd/job10686/slurm_script: line 20: cd: ./Systems/Ethane_Methane: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 24: cd: ./rep*/solv: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 26: cd: lambda_0.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 30: cd: lambda_1.0000: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 38: cd: /home/matthew/biosimspace_bigtests/Hydration_freenrg./Systems/Ethane_Methane: No such file or directory
+INFO:numexpr.utils:Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+WARNING:root:Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
+/home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:66: RuntimeWarning: Mean of empty slice
+  avg = np.nanmean([f for f in free_ens])
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/matthew/biosimspace_bigtests/Hydration_freenrg/python/analysis.py:88   │
+│ in <module>                                                                  │
+│                                                                              │
+│   85 energies_dict["successful_reps"] = [s_r]                                │
+│   86 energies_dict["date"] = [date.today()]                                  │
+│   87 df=pd.DataFrame.from_dict(energies_dict)                                │
+│ ❱ 88 df.to_csv(results_file,mode='a',header=False)                           │
+│   89                                                                         │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /core/generic.py:3772 in to_csv                                              │
+│                                                                              │
+│    3769 │   │   │   decimal=decimal,                                         │
+│    3770 │   │   )                                                            │
+│    3771 │   │                                                                │
+│ ❱  3772 │   │   return DataFrameRenderer(formatter).to_csv(                  │
+│    3773 │   │   │   path_or_buf,                                             │
+│    3774 │   │   │   lineterminator=lineterminator,                           │
+│    3775 │   │   │   sep=sep,                                                 │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/format.py:1186 in to_csv                                         │
+│                                                                              │
+│   1183 │   │   │   storage_options=storage_options,                          │
+│   1184 │   │   │   formatter=self.fmt,                                       │
+│   1185 │   │   )                                                             │
+│ ❱ 1186 │   │   csv_formatter.save()                                          │
+│   1187 │   │                                                                 │
+│   1188 │   │   if created_buffer:                                            │
+│   1189 │   │   │   assert isinstance(path_or_buf, StringIO)                  │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/formats/csvs.py:240 in save                                              │
+│                                                                              │
+│   237 │   │   Create the writer & save.                                      │
+│   238 │   │   """                                                            │
+│   239 │   │   # apply compression and byte/text conversion                   │
+│ ❱ 240 │   │   with get_handle(                                               │
+│   241 │   │   │   self.filepath_or_buffer,                                   │
+│   242 │   │   │   self.mode,                                                 │
+│   243 │   │   │   encoding=self.encoding,                                    │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:737 in get_handle                                              │
+│                                                                              │
+│    734 │                                                                     │
+│    735 │   # Only for write methods                                          │
+│    736 │   if "r" not in mode and is_path:                                   │
+│ ❱  737 │   │   check_parent_directory(str(handle))                           │
+│    738 │                                                                     │
+│    739 │   if compression:                                                   │
+│    740 │   │   if compression != "zstd":                                     │
+│                                                                              │
+│ /home/matthew/mambaforge/envs/openbiosim/lib/python3.10/site-packages/pandas │
+│ /io/common.py:600 in check_parent_directory                                  │
+│                                                                              │
+│    597 │   """                                                               │
+│    598 │   parent = Path(path).parent                                        │
+│    599 │   if not parent.is_dir():                                           │
+│ ❱  600 │   │   raise OSError(rf"Cannot save file into a non-existent directo │
+│    601                                                                       │
+│    602                                                                       │
+│    603 @overload                                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OSError: Cannot save file into a non-existent directory: '../../energy_results'
+/var/spool/slurmd/job10686/slurm_script: line 20: cd: ./Systems/Ethane_Methanol: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 24: cd: ./rep*/solv: No such file or directory
+/var/spool/slurmd/job10686/slurm_script: line 26: cd: lambda_0.0000: No such file or directory
+slurmstepd-yoko: error: *** JOB 10686 ON yoko CANCELLED AT 2023-06-06T17:13:54 ***

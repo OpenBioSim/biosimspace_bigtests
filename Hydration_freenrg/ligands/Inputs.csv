@@ -1,0 +1,12 @@
+SMILES, file_origin, mol
+C1CCC(C1)c1cc2c([nH]1)cccc2	solute.pdb, ./2-cyclopentanylindole/
+Cc1ccco1	solute.pdb, ./2-methylfuran/
+Cc1cc2c([nH]1)cccc2	solute.pdb, ./2-methylindole/
+C1CCC(C1)c1cccc2c1[nH]cc2	solute.pdb, ./7-cyclopentanylindole/
+CC	solute.pdb, ./ethane/
+CCO	solute.pdb, ./ethanol/
+C	solute.pdb, ./methane/
+CO	solute.pdb, ./methanol/
+CC(C)(C)C	solute.pdb, ./neopentane/
+CC(C)(C)C	solute.pdb, ./neopentane2/
+Cc1ccccc1	solute.pdb, ./toluene/
