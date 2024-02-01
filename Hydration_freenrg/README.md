@@ -8,6 +8,6 @@ A set of scripts used to reproduce the hydration free energy results of [Leoffle
 * Once Minimisation and equilibration are complete, simulations can be run using either ``SOMD1`` or ``SOMD2``. In order to run simulations using ``SOMD1`` run ``run_all_somd1.sh``. This will run all vacuum and solvated systems for all replicas using the SOMD1 protocol defined in ``mineq_solv.py`` and ``mineq_vac.py`` (expect this to take a while). In order to run simulations with ``SOMD2`` run ``run_all_somd2.sh``, this will run all vacuum and solvated legs using the protol defined in ``run_one_somd2.sh``.
 * Once all simulations are complete, run ``analyse_all_somd1.sh`` if SOMD1 was used to run simulations, or ``analyse_all_somd2`` if SOMD2 was used. This will generate a file called ``Free_en_outs.out`` in each perturbable system folder, as well as adding to the ``results.csv`` file in the ``energy_results`` folder.
 
-##Notes
+## Notes
 * Ensure that, prior to running scripts, the proper conda environment is listed in all bash scripts (``conda activate <your env name>``).
 * Protocols for SOMD1 and SOMD2 are defined differently: to alter SOMD1 protocols the relevant ``mineq_*.py`` script should be altered, to alter SOMD2 protocols, the ``run_one_somd2.sh`` script sohuld be altered.
