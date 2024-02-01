@@ -7,6 +7,7 @@ conservative protocol defined in https://doi.org/10.1063/5.0013849
 designed to be run in the respective replica folder
 """
 
+
 class MinimisationError(Exception):
     """Exception raised when failure occured during a minimisation step
 
@@ -14,10 +15,12 @@ class MinimisationError(Exception):
         min -- minimisation step that caused failure
         message -- explanation of error
     """
+
     def __init__(self, min, message="Minimisation Failed"):
-        self.min=min
-        self.message=message
+        self.min = min
+        self.message = message
         super().__init__(self.message)
+
 
 class EquilibrationError(Exception):
     """Exception raised when failure occured during an equilibration step
@@ -26,10 +29,12 @@ class EquilibrationError(Exception):
         eq -- equilibration step that caused failure
         message -- explanation of error
     """
+
     def __init__(self, eq, message="Equilibration Failed"):
-        self.eq=eq
-        self.message=message
+        self.eq = eq
+        self.message = message
         super().__init__(self.message)
+
 
 class GetSystemError(Exception):
     """Exception raised when a system of value None is found
@@ -38,21 +43,23 @@ class GetSystemError(Exception):
         sys -- name of none system
         message -- explanation of error
     """
+
     def __init__(self, sys, message="System with value None found"):
-        self.sys=sys
-        self.message=message
+        self.sys = sys
+        self.message = message
         super().__init__(self.message)
 
-#BSS.verbose(True)
+
+# BSS.verbose(True)
 solvated = BSS.IO.readPerturbableSystem(
     top0="pertsave_solv0.prm7",
     coords0="pertsave_solv0.rst7",
     top1="pertsave_solv1.prm7",
-    coords1= "pertsave_solv1.rst7",
+    coords1="pertsave_solv1.rst7",
 )
-#Need to manually change the device index in each CUDA equilibration to 0
-#stops wierd interactions with SLURM
-#(can be done with CUDA_VISIBLE_DEVICES instead but this is easier for large scripts)
+# Need to manually change the device index in each CUDA equilibration to 0
+# stops wierd interactions with SLURM
+# (can be done with CUDA_VISIBLE_DEVICES instead but this is easier for large scripts)
 substring = "CudaDeviceIndex"
 
 minimise_1 = BSS.Protocol.Minimisation(
@@ -76,9 +83,11 @@ equil_1 = BSS.Protocol.Equilibration(
     force_constant=5.0,
     thermostat_time_constant=0.5 * BSS.Units.Time.picosecond,
 )
-process_e1 = BSS.Process.OpenMM(min1, equil_1, work_dir="Equilibrate_1",platform='CUDA')
+process_e1 = BSS.Process.OpenMM(
+    min1, equil_1, work_dir="Equilibrate_1", platform="CUDA"
+)
 cfg1 = process_e1.getConfig()
-#This will break if there are more than 1 CudaDeviceIndex variables in the config, but I can't see this happening
+# This will break if there are more than 1 CudaDeviceIndex variables in the config, but I can't see this happening
 i = [cfg1.index(s) for s in cfg1 if substring in s]
 cfg1[i[0]] = "properties = {'CudaDeviceIndex': '0'}"
 process_e1.setConfig(cfg1)
@@ -137,7 +146,9 @@ equil_2 = BSS.Protocol.Equilibration(
     force_constant=1.0,
     thermostat_time_constant=1 * BSS.Units.Time.picosecond,
 )
-process_e2 = BSS.Process.OpenMM(min4, equil_2, work_dir="Equilibrate_2",platform='CUDA')
+process_e2 = BSS.Process.OpenMM(
+    min4, equil_2, work_dir="Equilibrate_2", platform="CUDA"
+)
 cfg2 = process_e2.getConfig()
 i = [cfg2.index(s) for s in cfg2 if substring in s]
 cfg2[i[0]] = "properties = {'CudaDeviceIndex': '0'}"
@@ -160,7 +171,7 @@ equil_3 = BSS.Protocol.Equilibration(
     force_constant=0.5,
     thermostat_time_constant=1 * BSS.Units.Time.picosecond,
 )
-process_e3 = BSS.Process.OpenMM(eq2, equil_3, work_dir="Equilibrate_3",platform='CUDA')
+process_e3 = BSS.Process.OpenMM(eq2, equil_3, work_dir="Equilibrate_3", platform="CUDA")
 cfg3 = process_e3.getConfig()
 i = [cfg3.index(s) for s in cfg3 if substring in s]
 cfg3[i[0]] = "properties = {'CudaDeviceIndex': '0'}"
@@ -179,11 +190,11 @@ equil_4 = BSS.Protocol.Equilibration(
     runtime=10 * BSS.Units.Time.picosecond,
     temperature=300 * BSS.Units.Temperature.kelvin,
     pressure=1.0 * BSS.Units.Pressure.bar,
-#    restraint="backbone", uncomment for systems contraining protein
-#    force_constant=0.5,  "                                         "
+    #    restraint="backbone", uncomment for systems contraining protein
+    #    force_constant=0.5,  "                                         "
     thermostat_time_constant=1 * BSS.Units.Time.picosecond,
 )
-process_e4 = BSS.Process.OpenMM(eq3, equil_4, work_dir="Equilibrate_4",platform='CUDA')
+process_e4 = BSS.Process.OpenMM(eq3, equil_4, work_dir="Equilibrate_4", platform="CUDA")
 cfg4 = process_e4.getConfig()
 i = [cfg4.index(s) for s in cfg4 if substring in s]
 cfg4[i[0]] = "properties = {'CudaDeviceIndex': '0'}"
@@ -204,7 +215,7 @@ equil_5 = BSS.Protocol.Equilibration(
     pressure=1.0 * BSS.Units.Pressure.bar,
     thermostat_time_constant=1.0 * BSS.Units.Time.picosecond,
 )
-process_e5 = BSS.Process.OpenMM(eq4, equil_5, work_dir="Equilibrate_5",platform='CUDA')
+process_e5 = BSS.Process.OpenMM(eq4, equil_5, work_dir="Equilibrate_5", platform="CUDA")
 cfg5 = process_e5.getConfig()
 i = [cfg5.index(s) for s in cfg5 if substring in s]
 cfg5[i[0]] = "properties = {'CudaDeviceIndex': '0'}"
@@ -218,6 +229,8 @@ if eq5 is None:
     raise GetSystemError(eq5)
 print("Fifth Equilibration Complete")
 
+# Save binary for SOMD2
+eq5.save("mineq_solv")
 protocol_run = BSS.Protocol.FreeEnergyProduction(
     num_lam=17,
     runtime=BSS.Types.Time(2.0, "ns"),
@@ -231,8 +244,7 @@ solv_somd = BSS.FreeEnergy.Relative(
     protocol_run,
     engine="somd",
     work_dir="solv",
-    extra_options={"minimise": "True","gpu":"0"},
+    extra_options={"minimise": "True", "gpu": "0"},
     setup_only=True,
 )
 print("Success!")
-
