@@ -12,7 +12,7 @@
 #SBATCH --error=./scriptouts/systemgenerate.err
 
 eval "$(conda shell.bash hook)"
-conda activate openbiosim
+conda activate sireDEV
 python3 --version
 ./convtoSMILES.sh
 cd ../
