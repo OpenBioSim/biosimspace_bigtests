@@ -22,7 +22,7 @@ for filename in ./Systems/*; do
         echo "System directory = $PWD"
 	systemfolder="$PWD"
 	for rep in ./rep*; do
-		cd $rep/solv
+		cd $rep/solvated_somd1
 		echo "$PWD"
 		cd lambda_0.0000
 		lj-tailcorrection -t somd.prm7 -c somd.rst7 -m somd.pert -C somd.cfg -l 0.00 -r traj000000001.dcd -s 1 1> ../freenrg-LJCOR-lam-0.000.dat 2> /dev/null
@@ -38,6 +38,6 @@ for filename in ./Systems/*; do
 	done
 	cd $maindir$filename
 	echo "HERE $PWD"
-	python $maindir/python/analysis.py > hydration_energy.out
+	python $maindir/python/analysis_somd1.py > hydration_energy.out
 	cd $maindir
 done
