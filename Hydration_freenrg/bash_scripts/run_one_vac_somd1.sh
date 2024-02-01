@@ -20,7 +20,7 @@ lam=${lamvals[SLURM_ARRAY_TASK_ID]}
 
 echo "lambda is: " $lam
 
-cd ./vac/lambda_$lam
+cd ./vacuum_somd1/lambda_$lam
 echo "$PWD"
 srun somd-freenrg -C ./somd.cfg -c ./somd.rst7 -t ./somd.prm7 -m ./somd.pert -p CUDA -l $lam
 cd ..

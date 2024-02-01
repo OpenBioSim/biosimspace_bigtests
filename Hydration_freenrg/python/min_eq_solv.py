@@ -243,7 +243,7 @@ solv_somd = BSS.FreeEnergy.Relative(
     eq5,
     protocol_run,
     engine="somd",
-    work_dir="solv",
+    work_dir="solvated_somd1",
     extra_options={"minimise": "True", "gpu": "0"},
     setup_only=True,
 )

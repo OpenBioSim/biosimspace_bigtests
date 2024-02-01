@@ -12,7 +12,7 @@
 #SBATCH --error=./scriptouts/runall.err
 
 eval "$(conda shell.bash hook)"
-conda activate openbiosim
+conda activate sireDEV
 python3 --version
 cd ../
 maindir="$PWD"
@@ -22,8 +22,8 @@ for filename in ./Systems/*; do
 	for rep in ./rep*; do
 		cd $rep
 		echo "rep directory = $PWD"
-		sbatch --wait --array=0-16 $maindir/bash_scripts/run_one_system_solv.sh
-		sbatch --wait --array=0-16 $maindir/bash_scripts/run_one_system_vac.sh
+		sbatch --wait --array=0-16 $maindir/bash_scripts/run_one_solv_somd1.sh
+		sbatch --wait --array=0-16 $maindir/bash_scripts/run_one_vac_somd1.sh
 		cd ..
 	done
 	cd $maindir

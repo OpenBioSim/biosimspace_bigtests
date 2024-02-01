@@ -61,7 +61,7 @@ vac_somd = BSS.FreeEnergy.Relative(
     min1,
     protocol_run,
     engine="somd",
-    work_dir="vac",
+    work_dir="vacuum_somd1",
     extra_options={"minimise": "True", "gpu": "0"},
     setup_only=True,
 )
