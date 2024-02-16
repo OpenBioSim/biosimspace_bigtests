@@ -233,7 +233,8 @@ print("Fifth Equilibration Complete")
 eq5.save("mineq_solv")
 protocol_run = BSS.Protocol.FreeEnergyProduction(
     num_lam=17,
-    runtime=BSS.Types.Time(2.0, "ns"),
+    timestep=BSS.Types.Time(1.0, "fs"),
+    runtime=BSS.Types.Time(500.0, "ps"),
     report_interval=20000,
     restart_interval=50,
     temperature=BSS.Types.Temperature(298, "K"),
@@ -244,7 +245,7 @@ solv_somd = BSS.FreeEnergy.Relative(
     protocol_run,
     engine="somd",
     work_dir="solvated_somd1",
-    extra_options={"minimise": "True", "gpu": "0"},
+    extra_options={"minimise": "True", "gpu": "0", "constraint": "none"},
     setup_only=True,
 )
 print("Success!")

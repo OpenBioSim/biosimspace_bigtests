@@ -17,8 +17,8 @@ python3 --version
 file_name_solv="mineq_solv.bss"
 file_name_vac="mineq_vac.bss"
 # Solvated leg
-somd2 ${file_name_solv} --runtime 500ps --timestep 1fs --h-mass-factor 1.0 --num-lambda 17 --temperature 298K --pressure 1atm --checkpoint-frequency 200ns --output-directory solvated_somd2 --no-restart --cutoff-type rf --cutoff 10.0A --overwrite --perturbable-constraint none
+somd2 ${file_name_solv} --runtime 500ps --timestep 1fs --h-mass-factor 1.0 --num-lambda 17 --temperature 298K --pressure 1atm --checkpoint-frequency 200ns --energy-frequency 0.25ps --output-directory solvated_somd2 --no-restart --cutoff-type rf --cutoff 10.0A --overwrite --perturbable-constraint none --constraint none --somd1-compatibility
 wait
 #Vacuum leg
-somd2 ${file_name_vac} --runtime 500ps --timestep 1fs --h-mass-factor 1.0 --num-lambda 17 --temperature 298K --checkpoint-frequency 1ns --output-directory vacuum_somd2 --no-restart --cutoff-type rf --cutoff infinite --overwrite --perturbable-constraint none
+somd2 ${file_name_vac} --runtime 500ps --timestep 1fs --h-mass-factor 1.0 --num-lambda 17 --temperature 298K --checkpoint-frequency 1ns --output-directory vacuum_somd2 --energy-frequency 0.25ps --no-restart --cutoff-type rf --cutoff 10.0A --overwrite --perturbable-constraint none --constraint none --somd1-compatibility
 wait

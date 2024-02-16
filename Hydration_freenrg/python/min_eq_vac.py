@@ -51,7 +51,8 @@ print("Minimisation Complete")
 min1.save("mineq_vac")
 protocol_run = BSS.Protocol.FreeEnergyProduction(
     num_lam=17,
-    runtime=BSS.Types.Time(2.0, "ns"),
+    runtime=BSS.Types.Time(500.0, "ps"),
+    timestep=BSS.Types.Time(1.0,"fs"),
     report_interval=10000,
     restart_interval=100,
     temperature=BSS.Types.Temperature(298, "K"),
@@ -62,7 +63,7 @@ vac_somd = BSS.FreeEnergy.Relative(
     protocol_run,
     engine="somd",
     work_dir="vacuum_somd1",
-    extra_options={"minimise": "True", "gpu": "0"},
+    extra_options={"minimise": "True", "gpu": "0", "constraint": "none"},
     setup_only=True,
 )
 print("Success!")
