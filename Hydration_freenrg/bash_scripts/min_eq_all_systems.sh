@@ -12,7 +12,7 @@
 #SBATCH --error=./scriptouts/MinEq.err
 
 eval "$(conda shell.bash hook)"
-conda activate openbiosim
+conda activate sireDEV
 python --version
 cd ../
 sdir="$PWD"

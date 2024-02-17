@@ -14,7 +14,7 @@
 #Designed to be run from within the /Systems/{currentsystem} folder
 #Directory work should be handled by MinEqallsystems.sh
 eval "$(conda shell.bash hook)"
-conda activate openbiosim
+conda activate sireDEV
 python3 --version
 reps=( rep0 rep1 rep2 )
 rep=${reps[SLURM_ARRAY_TASK_ID]}

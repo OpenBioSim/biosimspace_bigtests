@@ -8,8 +8,8 @@
 #SBATCH --mem 5000
     # Set job name
 #SBATCH --job-name=solv_run
-#SBATCH --output=solv.%j.o
-#SBATCH --error=solv.%j.er
+#SBATCH --output=vac.%j.o
+#SBATCH --error=vac.%j.er
 
 eval "$(conda shell.bash hook)"
 conda activate openbiosim
@@ -20,7 +20,7 @@ lam=${lamvals[SLURM_ARRAY_TASK_ID]}
 
 echo "lambda is: " $lam
 
-cd ./solv/lambda_$lam
+cd ./vacuum_somd1/lambda_$lam
 echo "$PWD"
 srun somd-freenrg -C ./somd.cfg -c ./somd.rst7 -t ./somd.prm7 -m ./somd.pert -p CUDA -l $lam
 cd ..
